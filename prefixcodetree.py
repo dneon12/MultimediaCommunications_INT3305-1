@@ -10,8 +10,10 @@ class PrefixCodeTree():
         tmp = self
         # Insert nodes into the tree, 0 is left node, 1 is right node
         i=0
+        print(codeword[2])
         while i < len(codeword):
             if i == len(codeword) -1:
+                #print(codeword[i])
                 if codeword[i] == 0:
                     tmp.left = PrefixCodeTree(symbol)
                 elif codeword[i] == 1:
@@ -21,6 +23,7 @@ class PrefixCodeTree():
                     if tmp.left is None:
                         tmp.left = PrefixCodeTree("")
                     tmp = tmp.left
+                    #print(tmp)
                 elif codeword[i] == 1:
                     if tmp.right is None:
                         tmp.right = PrefixCodeTree("")
